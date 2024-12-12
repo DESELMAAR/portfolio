@@ -5,6 +5,7 @@ import { Login } from "./parts/login";
 import AlertNotification from "./parts/AlertNotification";
 import { auth, provider, signInWithPopup, signOut } from "../firebase";
 import AddTechnologyButton from "./parts/AddTechnologyButton";
+import LoginGoogle from "./parts/NavBar/LoginGoogle";
 
 export default function NavBar({reload}){
     const {user,token,showLogin ,setUser}=UseStateContext();
@@ -40,10 +41,6 @@ const handleClickToggle=()=>{
         setToggle(false)
     }
 }
-
-// const ShowModal=()=>{
-//   console.log("showModal")
-// }
     return(
 
               <nav class=" border-gray-200 bg-black overflow-visible shadow-2xl   relative sticky top-0  navbarr">
@@ -102,44 +99,17 @@ const handleClickToggle=()=>{
 
                         
 
-                        <UserInfo/>
+                      <UserInfo/>
 
-                        <Login/>
+                      <Login/>
 
                     </ul>
           
                     </div>
 
-             
-                    <div className="authgoogle">
-                    <div>
-                        {/* {console.log(Object.keys(user).length===0)} */}
-                        {!(Object.keys(user).length===0) ? (
-                            <div className="flex items-center">
-                            <h1>Bienvenue, {user.displayName}</h1>
-                            <img className="rounded-full w-12 mx-2" src={user.photoURL} alt="Avatar" />
-                            <button onClick={handleLogout}>Logout</button>
-                            <AddTechnologyButton/>
-
-                            </div>
-                        ) : (
-
-                          <div className="flex">
-                               <button onClick={handleLogin}>Connect with <img className="w-10 img_login_google inline-block  " src="../../../../public/icon/language_progra/gmail.svg" alt="" /></button>
-                               <AddTechnologyButton/>
-                          </div>
-                           
-                        
-                        )}
-                        </div>
-                    </div>
+                    <LoginGoogle/>
                 </div>
-                <AlertNotification />
-
+                   <AlertNotification />
             </nav>
-
-      
-         
-      
     )
 }
