@@ -1,0 +1,318 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body{
+  position: relative;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
+body {
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+  background-color: black !important;
+  color: #fff !important;
+  font-family:Verdana, Geneva, Tahoma, sans-serif !important;
+}
+
+.appDiv{
+  padding: 0 1em;
+}
+
+/* Navbar */
+nav{
+  position: sticky;
+   font-family:Verdana, Geneva, Tahoma, sans-serif !important;
+   z-index: 60;
+}
+/* end Navbar */
+
+
+/* Bio */
+.Bio{
+  background-image: url("assets/blue1.png");
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 200px 1em 200px 1em;
+  display: grid;
+  z-index: 30;
+  /* position: relative; */
+  /* grid-template-columns: 1fr 1fr ; */
+}
+.login{
+  position: absolute;
+  top: 80px;
+  right: 0px;
+}
+
+.Bio .left .welcomeToMyPortfolio{
+     /* font-size: 4em; */
+     font-weight: 600;
+}
+
+/* .Bio .left .HiMyName{
+     font-size: 2em;
+} */
+.Bio .left .moreInfo{
+margin-top: 0.5em;
+/* font-size: 1.4em; */
+}
+.Bio .left button,.mailright form button, .Comments form button{
+  /* padding: 1em 0; */
+  /* margin-top: 1em; */
+  font-size: 1.3em;
+  background-color: white;
+  color: black;
+  padding: 0.4em 0.5em;
+  font-weight: bold;
+  transition: all ease-in-out 0.2s;
+}
+#downloadCv{
+  font-weight: bold;
+
+  background-color: tomato;
+  /* display: inline-block; */
+  color: white;
+}
+#downloadCv:hover{
+  background-color: rgb(10, 126, 126);
+  color: whitesmoke;
+}
+.Bio .left button:hover,.mailright form button:hover, .Comments form button:hover{
+  color: white;
+  background-color: rgb(10, 126, 126);
+}
+
+.imgIconEdit0{
+  width: 3em;
+  color: white;
+  transition: all ease-in-out 0.2s;
+  /* background-color: rgb(10, 126, 126); */
+}
+.imgIconEdit{
+  width: 1.5em;
+  color: white;
+  transition: all ease-in-out 0.2s;
+}
+.imgIconEdit:hover{
+  color: #121212;
+  border-bottom: 4px solid rgb(4, 117, 117);
+
+}
+
+.savefile{
+  margin-top: 1em;
+  font-size: 1.3em;
+  background-color: white;
+  color: black;
+  padding: 0.4em 0.5em;
+  font-weight: bold;
+  transition: all ease-in-out 0.2s;
+}
+.savefile:hover{
+  color: white;
+  background-color: rgb(4, 117, 117);
+}
+.savefilelabel{
+font-weight: 600;
+font-size: 20px;
+
+}
+
+.downloadcv{
+
+}
+/* end Bio */
+/* navbar */
+.divdiv{
+  display: flex;
+
+}
+.img_login_google{
+  border-radius: 20%;
+}
+/* end navbar */
+
+/* skills */
+
+
+
+.Skills
+{
+  background-color: #e9f1f3;
+  color: rgb(80, 79, 79) !important;
+  margin-top: -6em;
+  z-index: 30;
+  
+}
+.skills_title,.Projects_title{
+  font-size: 2em;
+  font-weight: 600;
+  text-align: center;
+  
+}
+.allSkills{
+  
+margin-top:1em;
+}
+.allSkills h4{
+font-size: 1.3em;
+font-weight: 600;
+text-align: center;
+}
+.allSkills:hover{
+  background:  #1babcf;
+  cursor:pointer;
+}
+/* end skills */
+
+/* projects */
+.Projects{
+  padding: 3em 0;
+
+  
+}
+.divProjects{
+  overflow: hidden;
+}
+
+/* .divProjects button{
+  display: none;
+
+}
+.divProjects:hover ~ .divProjects button{
+  display: block;
+z-index: 10;
+} */
+.imgProject{
+  transition: all ease-in-out 0.3s;
+}
+.imgProject:hover{
+transform: scale(1.2);
+z-index: 0;
+}
+/* end Projects */
+
+/* projects */
+
+
+/* end projects */
+
+/* contacts */
+.Contacts{
+  /* padding: 1em; */
+}
+.mailright form{
+display: grid;
+gap: 1em;
+}
+
+.mailright form input{
+  background-color: rgb(109, 8, 55);
+  padding: 0.4em 0.2em;
+  font-size: 18px;
+  outline: none;
+  border: 2px solid transparent;
+  transition: all ease-in-out 0.2s;
+
+}
+.mailright form input:focus{
+border: 2px solid tomato;
+}
+.mailright form textarea{
+  resize: none;
+  height: 6em;
+  background-color: rgb(104, 10, 54);
+  padding: 0.4em 0.2em;
+  font-size: 18px;
+  outline: none;
+  border: 2px solid transparent;
+  transition: all ease-in-out 0.2s;
+}
+.mailright form textarea:focus{
+  border: 2px solid tomato;
+
+}
+
+ .ConnectNow{
+  padding: 0.3em 0.2em;
+  outline: 1px solid whitesmoke;
+
+ }
+ .ConnectNow:hover{
+  background-color: #0753aa;
+  outline: 1px solid tomato;
+
+ }
+/* end contacts */
+
+/* Comments */
+
+.img-Comment{
+width: 50px;
+height: 50px;
+border-radius: 50%;
+}
+.Comments_img_textarea textarea{
+  resize: none;
+  outline: none;
+  padding: 0 1em;
+  color: #121212;
+  font-size: 20px;
+border: 3px solid tomato;
+border-radius: 20px;
+  height: 6em;
+}
+.Comments_img_textarea textarea:focus{
+  border: 3px solid #1babcf;
+transition: all ease-in-out 0.2s;
+}
+.Comments form button{
+background-color: #1babcf;
+color: white;
+}
+/* end comments */
+
+/* footer */
+
+.footer div p{
+  width: fit-content;
+}
+.footer div{
+  display: grid;
+  justify-content: center;
+}
+
+.contactme h3{
+  border-bottom: 2px solid gray;
+  font-size: 1.4em;
+  margin-bottom: 1em;
+}
+/* end footer */
+
+/* icon  */
+.iconprogra{
+  width: 4em;
+}
+/* 
+.spanimg:hover ~ .spanimg p{
+  display: block;
+} */
+
+.spanimg p{
+  color: rgb(129, 126, 126);
+  font-weight: 400;
+}
+/* end icon */
+
+/* b */
