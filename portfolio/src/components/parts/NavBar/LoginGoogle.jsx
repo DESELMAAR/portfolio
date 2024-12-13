@@ -10,6 +10,8 @@ export default function LoginGoogle(){
           if( Object.keys(result.user).length>0){
             setUser(result.user); // L'utilisateur connecté
 
+            localStorage.setItem("usergoogle",result.user);
+
           }else{
             setUser(null)
           }
@@ -29,6 +31,7 @@ export default function LoginGoogle(){
 
              <div className="authgoogle">
                                 <div>
+                                    {console.log(user)}
                                     {!(Object.keys(user).length===0) ? (
                                         <div className="flex items-center">
                                         <h1>Bienvenue, {user.displayName}</h1>

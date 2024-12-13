@@ -8,7 +8,7 @@ import Comments from './components/Comments'
 import Footer from './components/Footer'
 import './App.css'
 import { Login } from './components/parts/login'
-import { UseStateContext } from './context/ContextProvider'
+import { ContextProvider, UseStateContext } from './context/ContextProvider'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import AlertNotification from './components/parts/AlertNotification'
 import { ToastContainer, toast } from 'react-toastify';
@@ -28,15 +28,18 @@ function App() {
     }
   }
   return (
-    <div className='appDiv'>
-       <NavBar reload={reload}/>
-       <Bio/>
-       <Skills/>
-       <Projects/>
-       <Contacts/>
-       <Comments/>
-       <Footer/>
-    </div>
+    <ContextProvider>
+      <div className='appDiv'>
+            <NavBar reload={reload}/>
+            <Bio/>
+            <Skills/>
+            <Projects/>
+            <Contacts/>
+            <Comments/>
+            <Footer/>
+          </div>
+    </ContextProvider>
+   
    
   )
 }
