@@ -6,6 +6,17 @@
   box-sizing: border-box;
 
 }
+::-webkit-scrollbar {
+    width: 10px; /* Width of the scroll bar */
+    /* Height of the scroll bar for horizontal scrolling */
+    /* color: #121212; */
+    background-color: #020f1f;
+    margin-top: 3em;
+}
+::-webkit-scrollbar-thumb {
+  background: #686262; /* Medium gray color */
+  border-radius: 10px; /* Rounded edges */
+}
 
 body{
   position: relative;
@@ -19,7 +30,7 @@ body {
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
-  background-color: black !important;
+  background-color: rgb(25, 146, 177) !important;
   color: #fff !important;
   font-family:Verdana, Geneva, Tahoma, sans-serif !important;
 }
@@ -39,15 +50,11 @@ nav{
 
 /* Bio */
 .Bio{
-  background-image: url("assets/blue1.png");
-  background-position: top center;
-  background-size: cover;
-  background-repeat: no-repeat;
+
   padding: 200px 1em 200px 1em;
-  display: grid;
+  /* display: grid; */
   z-index: 30;
-  /* position: relative; */
-  /* grid-template-columns: 1fr 1fr ; */
+
 }
 .login{
   position: absolute;
@@ -129,9 +136,18 @@ font-size: 20px;
 
 }
 
-.downloadcv{
-
+.box {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 /* end Bio */
 /* navbar */
 .divdiv{
@@ -177,11 +193,11 @@ text-align: center;
 /* end skills */
 
 /* projects */
-.Projects{
+/* .Projects{
   padding: 3em 0;
 
   
-}
+} */
 .divProjects{
   overflow: hidden;
 }

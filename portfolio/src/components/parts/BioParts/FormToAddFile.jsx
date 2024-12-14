@@ -4,7 +4,8 @@ import axiosClient from "../../../axios-client";
 import Spinner from "../spinner";
 import { UseStateContext } from "../../../context/ContextProvider";
 
-export default function FormToAddFile({ShowHideFormAddFile}){
+export default function FormToAddFile({ShowHideFormAddFile,isVisible}){
+
     const [loading,setLoading]=useState(false)
     const fileValue=useRef();
     const nameValue=useRef();
@@ -32,7 +33,7 @@ export default function FormToAddFile({ShowHideFormAddFile}){
     }
     return (
 
-        <div className="w-fit mt-4">
+<div className="w-fit mt-4 ">
             <form action="" className="grid grid-cols-1 gap-4 overflow-x-hidden  mb-2" encType="multipart/form-data" >
                 <input ref={nameValue} type="text" placeholder="File Name" className="py-2 pl-2 focus:outline-none text-black font-semibold"/>
                
@@ -44,5 +45,7 @@ export default function FormToAddFile({ShowHideFormAddFile}){
             </form>
             <span className="mt-2">{loading && <Spinner/>}</span>
         </div>
+
+        
     )
 }

@@ -43,12 +43,13 @@ const handleClickToggle=()=>{
 }
     return(
 
-              <nav class=" border-gray-200 bg-black overflow-visible shadow-2xl   relative sticky top-0  navbarr">
+              <nav class=" border-gray-200 bg-black bg-opacity-85 overflow-visible shadow-2xl   relative sticky top-0  navbarr">
                 {console.log(user)}
-                <div class=" flex  flex-wrap overflow-visible items-center justify-between mx-auto p-4">
-                    <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-                        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
-                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                <div class=" flex  flex-wrap overflow-visible items-center justify-between mx-auto p-2">
+                    <a href="#" class="grid grid-cols-1 justify-center gap-0">
+                      
+                        <span class="self-center text-sm font-semibold whitespace-nowrap dark:text-white"><span className="bg-white dark:text-slate-700">A</span>bdessamad</span>
+                        <span class="self-center text-center text-sm -mt-1 bg-white  font-semibold whitespace-nowrap dark:text-slate-700">ELMAAROUFI</span>
                     </a>
 
                     <button data-collapse-toggle="navbar-default" onClick={handleClickToggle} type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
@@ -76,8 +77,7 @@ const handleClickToggle=()=>{
 
                         </li>
 
-                     <UserInfo reload={reload} handleLogout={handleLogout}/>
-                      <Login/>
+                    
                     </ul>
                     <ul class={toggle? "font-medium flex flex-col p-4  md:hidden  items-center md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   dark:border-gray-700 text-xl ":"font-medium flex flex-col p-4  max-md:hidden  items-center md:p-0 mt-4 border border-gray-100 rounded-lg hidden  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   dark:border-gray-700 text-xl "}>
                         <li>
@@ -99,15 +99,18 @@ const handleClickToggle=()=>{
 
                         
 
-                      <UserInfo/>
+                      
 
                       <Login/>
 
                     </ul>
-          
+                    
                     </div>
+                    <UserInfo reload={reload} handleLogout={handleLogout}/>
+               
 
-                    <LoginGoogle/>
+                    <Login/>
+                    {/* <LoginGoogle/> */}
                 </div>
                    <AlertNotification />
             </nav>

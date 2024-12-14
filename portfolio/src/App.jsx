@@ -29,7 +29,7 @@ function App() {
   }
   return (
     <ContextProvider>
-      <div className='appDiv'>
+      <div className='max-sm:px-2 bg-gradient-to-r from-red-900 via-red-950 to-orange-800'>
             <NavBar reload={reload}/>
             <Bio/>
             <Skills/>
