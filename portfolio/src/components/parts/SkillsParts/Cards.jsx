@@ -4,6 +4,8 @@ import { UseStateContext } from "../../../context/ContextProvider";
 import useForceUpdate from "../customHookReRendering";
 import FormAdd from "../FormAdd";
 import Spinner from "../spinner";
+import { CSSTransition } from "react-transition-group";
+import Technology from "./Technology";
 
 export default function Cards(){
     const [languages,setLanguages]=useState([]);
@@ -13,6 +15,7 @@ export default function Cards(){
     const [showClose4,setShowClose4]=useState(false)
     const [showFormAdd,setShowFormAdd]=useState(true);
     const [loading,setLoading]=useState(false);
+    const [show,setShow]=useState(false);
 
 
     const forceUpdate = useForceUpdate();
@@ -104,18 +107,31 @@ export default function Cards(){
     }
 
     const handleAdd=()=>{
-        if(showAddForm){
-            setShowAddForm(false)
+        if(show){
+            setShow(false)
         }else{
-            setShowAddForm(true)
+            setShow(true)
         }
     }
     return(   
             <>
                 {!loading ? <div className="">
-                            {token && <button onClick={handleAdd} className="ml-2 imgIconEdit"><img className="" src="/icon/crayon.png" alt="" /></button>}
-                            {showAddForm  && <div className=""><FormAdd getLanguages={getLanguages}/></div>}
-                            
+                               {
+                                token && 
+                                <button onClick={handleAdd} className="ml-2 imgIconEdit">
+                                     <img className="" src="/icon/crayon.png" alt="" />
+                                </button>
+                                }
+
+                                            <CSSTransition
+                                                  in={show}
+                                                  timeout={300}
+                                                  classNames="fade"
+                                                  unmountOnExit
+                                                  >
+                                                  <FormAdd/>
+                                            </CSSTransition>
+
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-2  ">
                                         <div className="card  frontend  max-md:justify-center flex-wrap max-md:border-b-2 max-md:border-slate-300 md:border-l-2 md:border-slate-300 p-2">
                                                     <h1 className="font-semibold text-xl">Frontend</h1>

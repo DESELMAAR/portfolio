@@ -5,9 +5,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import FormToAddFile from "./parts/BioParts/formToAddFile";
 import AlertNotification from "./parts/AlertNotification";
 import axiosClient from "../axios-client";
+import AddTechnologyButton from "./parts/AddTechnologyButton";
+import { CSSTransition } from "react-transition-group";
+
 
 export default function Bio(){
    const [isVisible, setIsVisible] = useState(false);
+   const [show, setShow] = useState(false);
+   const {showModalAddTechnology,setShowModalAddTechnology}=UseStateContext();
+   
 
    const {token,user,showLogin,setShowLogin}=UseStateContext();
    const [showFormToAddFile,setShowFormToAddFile]=useState(false); //state to manage showing form to add CV file
@@ -19,24 +25,15 @@ const handleShowLogin=()=>{
       setShowLogin(true)
    }
 }
-// const toggleFormAddFile=()=>{
-//    if(!isVisible){
-//       setIsVisible(true)
-
-//    }else{
-//       setIsVisible(false)
-
-//    }
-// }
+ 
+// const handleSetShow=() => setShow(!show)
 // function for showing form to add a CV file 
 const handleShowToAddFile=()=>{
    if(showFormToAddFile){
-      setIsVisible(false)
       setShowFormToAddFile(false)
       
    }else{
       setShowFormToAddFile(true)
-      setIsVisible(true)
 
    }
 }
@@ -49,7 +46,7 @@ toggleFormAddFile()
 }
 
 const handleDownloadCv=()=>{
-   // e.preventDefault();
+   
   
    axiosClient.get(`/getfiles/${1}`).then(({data})=>{
       console.log(data.file.image)
@@ -76,9 +73,16 @@ const downloadFileAtURL=(url)=>{
    aTag.remove();
 }
 
+const ShowModal=()=>{
+   if(showModalAddTechnology){
+       setShowModalAddTechnology(false)
+   }else{
+       setShowModalAddTechnology(true)
+   }
+   }
 
     return(
-      <div className="Bio grid bg-gradient-to-r from-red-900 via-red-950 to-orange-800  lg:grid-cols-2 lg:gap-6  z-50 grid-cols-1 ">
+      <div className="Bio grid  lg:grid-cols-2 lg:gap-6  z-50 grid-cols-1 ">
            
             <div className="left max-sm:grid max-sm:justify-center">
                <div className="socialmedia flex gap-2">
@@ -93,10 +97,10 @@ const downloadFileAtURL=(url)=>{
                   </a>
                </div>
                <p className="HiMyName text-xl md:text-xl">Hello! My name is Abdessamad <br /> A FullStack Develloper</p>
-               <p className="welcomeToMyPortfolio lg:text-4xl  md:text-6xl text-5xl flex-wrap text-cyan-600">Welcome to my Portfolio</p>
-               <p className="moreInfo text-sm sm:text-md text-slate-500 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, alias. Debitis nobis fugiat cum mollitia, suscipit quisquam omnis, magni aspernatur, aliquam est aliquid eius animi corrupti quam nam sapiente quis.</p>
+               <p className="welcomeToMyPortfolio lg:text-4xl  md:text-6xl text-6xl flex-wrap text-cyan-200">Welcome to my Portfolio</p>
+               <p className="moreInfo text-md font-semibold sm:text-md text-slate-900  mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, alias. Debitis nobis fugiat cum mollitia, suscipit quisquam omnis, magni aspernatur, aliquam est aliquid eius animi corrupti quam nam sapiente quis.</p>
                {
-               token? <div> <div className="flex">
+               token? <div> <div className="flex mb-2">
                   <a onClick={()=>{downloadFileAtURL("http://127.0.0.1:8000/storage/"+file)}} target="_blank"    id="downloadCv" className="flex items-center px-2" >Download Cv</a>
                   
                   <button className="ml-2">See profile</button>
@@ -106,6 +110,9 @@ const downloadFileAtURL=(url)=>{
                   </label>
                   </button>
                   </div>
+                        {/* <AddTechnologyButton/> */}
+                        <a onClick={ShowModal} className="text-fuchsia-950 font-semibold hover:border-b-2 border-fuchsia-950 transition-all duration-300  cursor-pointer">Add a new programing language</a>
+
                   </div>
                   :
                   <>
@@ -117,9 +124,16 @@ const downloadFileAtURL=(url)=>{
                
             </div>
             <div className="right">
-               {showFormToAddFile && 
-                  <FormToAddFile ShowHideFormAddFile={ShowHideFormAddFile} />
-               }
+           
+
+            <CSSTransition
+                  in={showFormToAddFile}
+                  timeout={300}
+                  classNames="fade"
+                  unmountOnExit
+                  >
+                  <FormToAddFile/>
+            </CSSTransition>
             </div>
 
       </div> 

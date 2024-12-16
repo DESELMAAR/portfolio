@@ -5,8 +5,10 @@ import Cards from "./parts/SkillsParts/Cards";
 import useForceUpdate from "./parts/customHookReRendering";
 import Technology from "./parts/SkillsParts/Technology";
 import AlertNotification from "./parts/AlertNotification";
+import { CSSTransition } from "react-transition-group";
+
 export default function Skills(){
-    const {token,user,showAddForm,setShowAddForm,notification,setNotification}=UseStateContext()
+    const {token,user,showAddForm,setShowAddForm,notification,setNotification,showModalAddTechnology}=UseStateContext()
     const [reload,setReload]=useState(false);
     const forceUpdate = useForceUpdate();
 
@@ -21,7 +23,15 @@ export default function Skills(){
                         <div className="">
                             <p className="skills_title">Skills</p>
                             <p className="skill-info text-center flex-wrap text-sm">I have a solid experence as a fullStack Developper,  making differents projects to maintain my skills and developpe for new features.  you find some project that I have made with these technologies</p>
-                            <Technology/>
+                            <CSSTransition
+                                in={showModalAddTechnology}
+                                timeout={300}
+                                classNames="fade"
+                                unmountOnExit
+                                >
+                                <Technology/>
+                            </CSSTransition>
+                        
                             <Cards/>
                         </div>
                         

@@ -1,9 +1,13 @@
 
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Nunito", sans-serif !important;
+
 
 }
 ::-webkit-scrollbar {
@@ -20,6 +24,7 @@
 
 body{
   position: relative;
+  
 }
 html {
   scroll-behavior: smooth;
@@ -27,13 +32,19 @@ html {
 }
 
 body {
-  font-weight: 400;
-  overflow-x: hidden;
-  position: relative;
-  background-color: rgb(25, 146, 177) !important;
+ 
+
+background-color: #ff7700;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23cc0000' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23aa0000' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23d6002b' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23b10022' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23d9004b' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%23b2003d' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23d3006c' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23ac0057' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23c4008c' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%239e0071' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23aa00aa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23880088' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+background-size: cover; 
+background-position: top ;
+background-repeat: no-repeat;
+background-attachment: fixed;
+  /* background-color: rgb(25, 146, 177) !important; */
   color: #fff !important;
   font-family:Verdana, Geneva, Tahoma, sans-serif !important;
 }
+
 
 .appDiv{
   padding: 0 1em;
@@ -51,7 +62,7 @@ nav{
 /* Bio */
 .Bio{
 
-  padding: 200px 1em 200px 1em;
+  padding: 100px 1em 200px 1em;
   /* display: grid; */
   z-index: 30;
 
@@ -79,6 +90,7 @@ margin-top: 0.5em;
   /* margin-top: 1em; */
   font-size: 1.3em;
   background-color: white;
+
   color: black;
   padding: 0.4em 0.5em;
   font-weight: bold;
@@ -175,6 +187,7 @@ font-size: 20px;
   font-size: 2em;
   font-weight: 600;
   text-align: center;
+  color: #312f2f;
   
 }
 .allSkills{
@@ -202,13 +215,61 @@ text-align: center;
   overflow: hidden;
 }
 
-/* .divProjects button{
-  display: none;
-
+.project_item{
+  background-color: #cedee2;
+  display: grid;
+  gap: 1em;
+  border-radius: 6px;
+  /* opacity: 0.8; */
+  position: relative;
+  overflow: hidden;
+  padding: 16px;
+  color: rgb(80, 79, 79) !important;
+  transition: all ease-in-out 0.3s;
 }
-.divProjects:hover ~ .divProjects button{
-  display: block;
-z-index: 10;
+
+.project_itemOne{
+ 
+
+  background-color: #e9f1f3;
+
+  display: grid;
+  gap: 1em;
+  border-radius: 6px;
+  /* opacity: 0.8; */
+  position: relative;
+  overflow: hidden;
+  padding: 16px;
+  color: rgb(80, 79, 79) !important;
+  transition: all ease-in-out 0.3s;
+}
+.btnsdivRelative{
+  background-color: #121212;
+  opacity: 0.7;
+  transition: all ease-in-out 0.4s;
+  /* display: none; */
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 0;
+}
+.btnsdivRelativeOne{
+  /* opacity: 0.6; */
+  transition: all ease-in-out 0.4s;
+  display: none;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+/* .divlink{
+  background-color: rgb(6, 94, 94);
 } */
 .imgProject{
   transition: all ease-in-out 0.3s;
@@ -216,6 +277,12 @@ z-index: 10;
 .imgProject:hover{
 transform: scale(1.2);
 z-index: 0;
+}
+
+.AddProject input{
+  background-color: rgb(10, 129, 138);
+  outline: 1px solid rgb(16, 64, 110);
+  padding: 4px ;
 }
 /* end Projects */
 
@@ -293,10 +360,7 @@ border-radius: 20px;
   border: 3px solid #1babcf;
 transition: all ease-in-out 0.2s;
 }
-.Comments form button{
-background-color: #1babcf;
-color: white;
-}
+
 /* end comments */
 
 /* footer */
@@ -332,3 +396,23 @@ color: white;
 /* end icon */
 
 /* b */
+
+
+/* animation transition */
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 400ms;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 400ms;
+}
+
+
+/*  */

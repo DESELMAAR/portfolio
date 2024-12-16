@@ -43,6 +43,7 @@ const payload={
 
     return(
     <>
+    
         <div>
              {showModalAddTechnology && 
              
@@ -50,19 +51,15 @@ const payload={
                     <h3 className="text-xl font-semibold text-slate-100">Add new Language</h3>
                     <form className="grid gap-2 m-4">
                         <input ref={TechnologyValue} className="py-2 pl-2 border-none outline-0 rounded-md" type="text" placeholder="Set A new Language..."/>
-
                         <input ref={projectidValue} className="py-2 pl-2 border-none outline-0 rounded-md" type="text" placeholder="Set A new Language..."/>
                         <div className="grid gap-2 grid-cols-3">
                         <button type="submit" onClick={AddTechnology} className="bg-white  text-blue-700 px-8 py-2 font-semibold rounded-md hover:bg-orange-600 hover:text-white transition-all duration-300">Save</button>
-                        {/* {loading && <button className="bg-white text-blue-700 px-8 py-2 font-semibold rounded-md hover:bg-orange-600 hover:text-white transition-all duration-300 "> <Spinner/></button>} */}
-                       
                         <button onClick={CloseModal} className="bg-white text-blue-700 px-8 py-2 font-semibold rounded-md hover:bg-orange-600 hover:text-white transition-all duration-300 ml-4">Cancel</button>
-
-                      
-
                         </div> 
                     </form>
-                </div>}
+                </div>
+                
+                }
         </div>
     </>
     )
