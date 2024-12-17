@@ -145,15 +145,21 @@ margin-top: 0.5em;
 
 .savefile{
   font-size: 1.3em;
-  background-color: white;
-  color: black;
-  padding: 0.4em 0.5em;
+  background-color: rgb(240, 113, 75);
+  color: white;
+  /* padding: 0.4em 0.5em; */
   font-weight: bold;
   transition: all ease-in-out 0.2s;
 }
 .savefile:hover{
   color: white;
   background-color: rgb(4, 117, 117);
+}
+
+@media screen and (min-width:760px){
+  .right div{
+    border-radius: 8em 0 8em 0;
+  }
 }
 .savefilelabel{
 font-weight: 600;

@@ -83,7 +83,7 @@ const ShowModal=()=>{
    }
 
     return(
-      <Element name="bio"  className="Bio grid max-md:gap-3  lg:grid-cols-2 lg:gap-6  z-50 grid-cols-1 ">
+      <Element name="bio"  className="Bio grid max-md:gap-3 gap-3 lg:grid-cols-2 lg:gap-6  z-50 grid-cols-1 ">
            
             <div className="left bg-white p-4 md:rounded-r-full max-sm:grid max-sm:justify-center">
                <div className="socialmedia flex gap-2">
