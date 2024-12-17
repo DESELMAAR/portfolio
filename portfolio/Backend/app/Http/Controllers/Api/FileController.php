@@ -25,10 +25,10 @@ class FileController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        //
-    }
+    // public function create()
+    // {
+    //     //
+    // }
 public function download(string $id){
     $myfile = File::find($id)->image;
     // dd($myfile);

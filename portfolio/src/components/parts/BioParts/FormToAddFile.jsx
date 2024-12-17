@@ -33,15 +33,17 @@ export default function FormToAddFile({ShowHideFormAddFile,isVisible}){
     }
     return (
 
-<div className="w-fit mt-4 ">
+<div className="w-fit mt-4 p-4 rounded-md  ">
+    <h3 className="text-center font-bold text-purple-900">Add new CV</h3>
+    <p className=" font-semibold text-slate-800">A new CV will replace the old one</p>
             <form action="" className="grid grid-cols-1 gap-4 overflow-x-hidden  mb-2" encType="multipart/form-data" >
-                <input ref={nameValue} type="text" placeholder="File Name" className="py-2 pl-2 focus:outline-none text-black font-semibold"/>
+                <input ref={nameValue} type="text" placeholder="File Name" className="py-2 pl-2 focus:outline-none text-black font-semibold rounded-md "/>
                
-                <textarea ref={descriptionValue} placeholder="Description" name="" id="" className="resize-none py-2 pl-2 focus:outline-none text-black font-semibold"></textarea>
+                <textarea ref={descriptionValue} placeholder="Description" name="" id="" className="resize-none py-2 pl-2 focus:outline-none text-black font-semibold rounded-md "></textarea>
                 <label htmlFor="inputfile " className="bg-cyan-600">
-                    <input ref={fileValue} id="inputfile" type="file" className="savefilelabel" />
+                    <input  ref={fileValue} id="inputfile" type="file" className="savefilelabel rounded-md ml-4 " />
                 </label>
-                <button onClick={SaveFile} className="savefile ">Save File </button>
+                <button onClick={SaveFile} className="savefile rounded-full ">Save File </button>
             </form>
             <span className="mt-2">{loading && <Spinner/>}</span>
         </div>

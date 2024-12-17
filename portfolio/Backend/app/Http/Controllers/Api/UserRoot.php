@@ -14,12 +14,12 @@ class UserRoot extends Controller
      * Display a listing of the resource.
      */
     public function login(UserRequest $request){
-        //  dd($request->validated());
+        
          $credentials = $request->validated();
-        //   dd($credentials);
+
          if(!Auth::attempt($credentials)){
             return response([
-                "msg"=>"Not connected"
+                "msg"=>"Login or password not correct"
              ]);
         
          }else{

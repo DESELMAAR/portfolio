@@ -6,6 +6,7 @@ import useForceUpdate from "./parts/customHookReRendering";
 import Technology from "./parts/SkillsParts/Technology";
 import AlertNotification from "./parts/AlertNotification";
 import { CSSTransition } from "react-transition-group";
+import { Link,Element } from "react-scroll";
 
 export default function Skills(){
     const {token,user,showAddForm,setShowAddForm,notification,setNotification,showModalAddTechnology}=UseStateContext()
@@ -18,7 +19,7 @@ export default function Skills(){
   
 
     return(
-                  <div className="Skills lg:mx-16 md:mx-8 sm:mx-0 rounded-md  lg:p-4 md:p-2 sm:p-1 relative ">
+                  <Element name="skills" className="Skills lg:mx-16 md:mx-8 sm:mx-0 rounded-md  lg:p-4 md:p-2 sm:p-1 relative ">
                        
                         <div className="">
                             <p className="skills_title">Skills</p>
@@ -35,6 +36,6 @@ export default function Skills(){
                             <Cards/>
                         </div>
                         
-                   </div>
+                   </Element>
     )
 }

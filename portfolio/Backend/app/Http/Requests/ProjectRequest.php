@@ -23,7 +23,7 @@ class ProjectRequest extends FormRequest
     {
         return [
             "name"=>"required",
-            "image"=>"|file|mimes:jpeg,png,jpg,gif,svg,word,pdf",
+            "image"=>"|image|mimes:jpeg,png,jpg,gif,svg,word,pdf",
             "url"=>"required",
             "github"=>"required",
 

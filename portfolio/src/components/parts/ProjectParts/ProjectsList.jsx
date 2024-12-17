@@ -22,15 +22,14 @@ export default function(){
     return (
         <div className="mx-auto  ">
             <button className="ml-2 imgIconEdit"><img className="text-white " src="/icon/crayon.png" alt="" /></button>
-            {/* card */}
             <div className="grid-cols-1 grid md:grid-cols-2 lg:w-full lg:grid-cols-3  xl:grid-cols-3  mx-auto gap-2 mt-8">
 
                   {projects.map((item,key)=>{
                      return (
                      <div onMouseLeave={()=>{handleMouseHover(null)}} onMouseOver={()=>{handleMouseHover(item.id,key)}} key={key} className={keyHover===item.id ? "project_itemOne":"project_item"}>
-                      <img src="" alt="" />
+                      <img src={`http://127.0.0.1:8000/storage/${item.image}`} alt={item.image} />
                       <div>
-                          <h4 className="text-center   border-slate-400">details of the projects</h4>
+                          <h4 className="text-center   border-slate-400">Details of the projects</h4>
                           <h3>Project name: {item.name}</h3>
                           <ul>
                               <li>Laravel</li>
@@ -40,7 +39,7 @@ export default function(){
                           </ul>
                       </div>
                       <div  className={keyHover===item.id ? "btnsdivRelativeOne":"btnsdivRelative"}>
-                        <div className="w-fit flex items-center gap-3 divlink z-50 bg-slate-300 hover:bg-slate-700 transition-all duration-300 text-white  px-3 py-1 rounded-3xl">
+                        <div className="w-fit flex items-center gap-3 divlink z-50 opacity-50 hover:opacity-90 bg-slate-300 hover:bg-slate-700 transition-all duration-300 text-white  px-3 py-1 rounded-3xl">
                         <a href={item.url} target="_blanc" className="hover:bg-slate-800 transition-all duration-300 p-1 rounded-full flex">
                                                             <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"/>

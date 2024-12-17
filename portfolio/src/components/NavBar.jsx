@@ -6,6 +6,7 @@ import AlertNotification from "./parts/AlertNotification";
 import { auth, provider, signInWithPopup, signOut } from "../firebase";
 import AddTechnologyButton from "./parts/AddTechnologyButton";
 import LoginGoogle from "./parts/NavBar/LoginGoogle";
+import { Link,Element } from "react-scroll";
 
 export default function NavBar({reload}){
     const {user,token,showLogin ,setUser}=UseStateContext();
@@ -50,6 +51,7 @@ const handleClickToggle=()=>{
                       
                         <span class="self-center text-sm font-semibold whitespace-nowrap dark:text-white"><span className="bg-white dark:text-slate-700">A</span>bdessamad</span>
                         <span class="self-center text-center text-sm -mt-1 bg-white  font-semibold whitespace-nowrap dark:text-slate-700">ELMAAROUFI</span>
+                       
                     </a>
 
                     <button data-collapse-toggle="navbar-default" onClick={handleClickToggle} type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
@@ -61,25 +63,25 @@ const handleClickToggle=()=>{
                     <div class={toggle? "divdiv    w-full lg:block md:w-auto ":"divdiv   hidden w-full lg:block md:w-auto "} id="navbar-default">
                     <ul class={"font-medium flex flex-col p-4  max-md:hidden   items-center md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   dark:border-gray-700 text-xl "}>
                         <li>
-                        <a href="#" class="block py-2 px-3 text-white rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Bio</a>
+                        <Link  to="bio" class="block py-2 px-3 text-white rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Bio</Link>
                         </li>
                         <li>
-                        <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Skills</a>
+                        <Link  to="skills" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Skills</Link>
                         </li>
                         <li>
-                        <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Projects</a>
+                        <Link  to="project" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Projects</Link>
                         </li>
                         <li>
-                        <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500  dark:hover:text-white md:dark:hover:bg-transparent">Contacts</a>
+                        <Link  to="contact" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500  dark:hover:text-white md:dark:hover:bg-transparent">Contacts</Link>
                         </li>
                         <li>
-                        <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent">Comments</a>
+                        <Link  to="comment" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent">Comments</Link>
 
                         </li>
 
                     
                     </ul>
-                    <ul class={toggle? "font-medium flex flex-col p-4  md:hidden  items-center md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   dark:border-gray-700 text-xl ":"font-medium flex flex-col p-4  max-md:hidden  items-center md:p-0 mt-4 border border-gray-100 rounded-lg hidden  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   dark:border-gray-700 text-xl "}>
+                    <ul class={toggle? "font-medium flex flex-col p-4  md:hidden  items-center md:p-0 mt-4   rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   dark:border-gray-700 text-xl ":"font-medium flex flex-col p-4  max-md:hidden  items-center md:p-0 mt-4   rounded-lg hidden  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   dark:border-gray-700 text-xl "}>
                         <li>
                         <a href="#" class="block py-2 px-3 text-white rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Bio</a>
                         </li>
@@ -100,13 +102,21 @@ const handleClickToggle=()=>{
                         
 
                       
-
+                      
                       <Login/>
+                      <div className="md:hidden">
+                    <UserInfo reload={reload} handleLogout={handleLogout}/>
 
+
+                    </div>
                     </ul>
                     
                     </div>
+                    <div className="max-md:hidden">
                     <UserInfo reload={reload} handleLogout={handleLogout}/>
+
+
+                    </div>
                
 
                     <Login/>

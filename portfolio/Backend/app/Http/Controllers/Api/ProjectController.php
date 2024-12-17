@@ -18,23 +18,12 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
-        return response()->json($projects);
+        return response()->json(
+            $projects
+        );
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    // public function store(ProjectRequest $request,Project $project) 
-    // {
-    //     $data=$request->validated();
-    //     if(Project::create($data)){
-    //         return response([
-    //             "msg"=>"project saved successfully",
-    //             "project"=>$data,
-    //             "status"=>200
-    //         ]);
-    //     };
-    // }
+   
     public function store(ProjectRequest $request)
     {
         // dd($request);
