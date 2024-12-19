@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TechnologyRequest;
 use App\Models\technologies;
+use App\Models\Technology;
 use Exception;
 use Illuminate\Http\Request;
 
@@ -13,21 +14,21 @@ class TechnologyController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(technologies $technologies)
+    public function index(Technology $technology)
     {
-        $data= $technologies->get();
+        $data= $technology->get();
         return response()->json($data);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(TechnologyRequest $request,technologies $technologies)
+    public function store(TechnologyRequest $request,Technology $technology)
     {
         $data=$request->validated();
         try{
 
-            if(technologies::create($data)){
+            if(Technology::create($data)){
                 return response([
                     "msg"=>"saved success",
                     "status"=>200,
@@ -66,9 +67,9 @@ class TechnologyController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(technologies $technologie)
+    public function destroy(Technology $technology)
     {
-        $technologie->delete();
+        $technology->delete();
         return response([
             "msg"=>"deleted",
             "status"=>200

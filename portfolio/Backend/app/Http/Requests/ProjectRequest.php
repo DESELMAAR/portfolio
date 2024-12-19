@@ -26,6 +26,8 @@ class ProjectRequest extends FormRequest
             "image"=>"|image|mimes:jpeg,png,jpg,gif,svg,word,pdf",
             "url"=>"required",
             "github"=>"required",
+            'technologies' => 'array',
+            'technologies.*' => 'exists:technologies,id',
 
         ];
     }

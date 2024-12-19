@@ -22,8 +22,7 @@ class TechnologyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name"=>"required",
-            "project_id"=>"required"
+            "name"=>"required"
         ];
     }
 }

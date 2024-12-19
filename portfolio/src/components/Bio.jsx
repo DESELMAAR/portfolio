@@ -83,10 +83,12 @@ const ShowModal=()=>{
    }
 
     return(
-      <Element name="bio"  className="Bio grid max-md:gap-3 gap-3 lg:grid-cols-2 lg:gap-6  z-50 grid-cols-1 ">
-           
-            <div className="left bg-white p-4 md:rounded-r-full max-sm:grid max-sm:justify-center">
+      <>
+                 <Element name="bio"  className="Bio grid max-md:gap-3 gap-3 lg:grid-cols-2 lg:gap-6  z-50 grid-cols-1 ">
+            <div className="left bg-white p-4 md:rounded-r-full  max-sm:grid max-sm:justify-center">
                <div className="socialmedia flex gap-2">
+               { <img className="h-40" src="/project_img/myphoto.jpg" alt="" />}
+
                   <a target="_blank" href="https://www.linkedin.com/in/abdessamad-el-maaroufi-6b18bb224/">
                   <img className="w-10" src="../../public/icon/language_progra/linkedin.svg" alt="" />
                   </a>
@@ -135,8 +137,14 @@ const ShowModal=()=>{
                   >
                   <FormToAddFile/>
             </CSSTransition>
+
+            
+
             </div>
+            
 
       </Element> 
+      </>
+      
     )
 }

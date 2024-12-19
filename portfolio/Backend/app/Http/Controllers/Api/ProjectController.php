@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProjectRequest;
 use App\Models\Project;
+use Exception;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Str;
@@ -17,38 +18,56 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
-        return response()->json(
-            $projects
-        );
+        $projects = Project::with('technologies')->get();
+        // return response()->json(
+        //     $projects
+        // );
+
+        return response()->json($projects->map(function ($project) {
+            return [
+                'id' => $project->id,
+                'name' => $project->name,
+                'image_url' => $project->image_url,
+                'url' => $project->url,
+                'github' => $project->github,
+                'technologies' => $project->technologies,
+            ];
+        }));
     }
 
    
     public function store(ProjectRequest $request)
     {
-        // dd($request);
         try {
-            $imageName = Str::random(32).".".$request->image->getClientOriginalExtension();
-            // Create Product
-            Project::create([
+            // Save image with a unique name
+            $imageName = Str::random(32) . "." . $request->image->getClientOriginalExtension();
+            Storage::disk('public')->put($imageName, file_get_contents($request->image));
+    
+            // Create the project
+            $project = Project::create([
                 'name' => $request->name,
                 'image' => $imageName,
                 'url' => $request->url,
-                'github'=>$request->github
+                'github' => $request->github,
             ]);
-            // Save Image in Storage folder
-            Storage::disk('public')->put($imageName, file_get_contents($request->image));
-            // Return Json Response
+    
+            // Attach technologies
+            $technologies = $request->input('technologies', []);
+            $project->technologies()->sync($technologies);
+    
             return response()->json([
-                'message' => "Product successfully created."
-            ],200);
-        } catch (\Exception $e) {
-            // Return Json Response
+                'message' => 'Project successfully created.',
+                'project' => $project
+            ], 201);
+        } catch (Exception $e) {
             return response()->json([
-                'message' => "Something went really wrong!"
-            ],500);
+                'message' => 'Something went wrong!',
+                'error' => $e->getMessage()
+            ], 500);
         }
     }
+    
+    
     /**
      * Display the specified resource.
      */

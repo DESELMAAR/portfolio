@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from "react";
 import axiosClient from "../../../axios-client";
+import DeleteProject from "./DeleteProject";
+import AddProject from "./AddProject";
 
 
-export default function(){
+export default function ProjectList(){
     const [projects,setProjects]=useState([]);
     const [keyHover,setKeyHover]=useState("");
+    const [showAddProjectForm,setShowAddProjectForm]=useState(true);
 
+const getProjectList=()=>{
+    axiosClient.get("/getProjects").then(({data})=>{
+        console.log(data)
+        setProjects(data)
+    }).catch((err)=>{
+        console.log(err)
+    })
+}
     useEffect(()=>{
-        axiosClient.get("/getProjects").then(({data})=>{
-            console.log(data)
-            setProjects(data)
-        }).catch((err)=>{
-            console.log(err)
-        })
+        getProjectList()
     },[])
 
     const handleMouseHover=(e,i)=>{
@@ -22,20 +28,20 @@ export default function(){
     return (
         <div className="mx-auto  ">
             <button className="ml-2 imgIconEdit"><img className="text-white " src="/icon/crayon.png" alt="" /></button>
-            <div className="grid-cols-1 grid md:grid-cols-2 lg:w-full lg:grid-cols-3  xl:grid-cols-3  mx-auto gap-2 mt-8">
+            <div className="grid-cols-1 grid md:grid-cols-2 lg:w-full lg:grid-cols-3  xl:grid-cols-3   mx-auto gap-2 mt-8">
 
                   {projects.map((item,key)=>{
                      return (
                      <div onMouseLeave={()=>{handleMouseHover(null)}} onMouseOver={()=>{handleMouseHover(item.id,key)}} key={key} className={keyHover===item.id ? "project_itemOne":"project_item"}>
-                      <img src={`http://127.0.0.1:8000/storage/${item.image}`} alt={item.image} />
+                      {/* <img src={image_url} alt='pic' /> */}
                       <div>
                           <h4 className="text-center   border-slate-400">Details of the projects</h4>
                           <h3>Project name: {item.name}</h3>
                           <ul>
-                              <li>Laravel</li>
-                              <li>html</li>
-                              <li>bootsrap</li>
-                              <li>css3</li>
+                              
+                              {item.technologies.map((technology,key)=>{
+                               return (<li key={key}>{technology.name}</li>)
+                              })}
                           </ul>
                       </div>
                       <div  className={keyHover===item.id ? "btnsdivRelativeOne":"btnsdivRelative"}>
@@ -60,13 +66,26 @@ export default function(){
                                 </svg>
 
                         </a>
-                        </div>     
+
+                       
+                        </div>  
+
                       </div>
-                    </div>)
+                     {/*  */}
+                     <DeleteProject id={item.id} getProjectList={getProjectList}/>
+                    </div>
+                    
+                )
                   }) 
-                  
+                 
                   }
+                 
             </div>
+
+  {showAddProjectForm && <AddProject getProjectList={getProjectList}/>
+            
+            
+            }
         </div>      
     )
 }
