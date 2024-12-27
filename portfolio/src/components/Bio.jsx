@@ -26,9 +26,7 @@ const handleShowLogin=()=>{
       setShowLogin(true)
    }
 }
- 
-// const handleSetShow=() => setShow(!show)
-// function for showing form to add a CV file 
+
 const handleShowToAddFile=()=>{
    if(showFormToAddFile){
       setShowFormToAddFile(false)
@@ -84,24 +82,24 @@ const ShowModal=()=>{
 
     return(
       <>
-                 <Element name="bio"  className="Bio grid max-md:gap-3 gap-3 lg:grid-cols-2 lg:gap-6  z-50 grid-cols-1 ">
-            <div className="left bg-white p-4 md:rounded-r-full  max-sm:grid max-sm:justify-center">
+                 <Element name="bio"  className="Bio grid mb-4 relative  lg:grid-cols-2   z-50 grid-cols-1 ">
+            <div className="left bg-white p-4   max-sm:grid max-sm:justify-center">
                <div className="socialmedia flex gap-2">
-               { <img className="h-40" src="/project_img/myphoto.jpg" alt="" />}
+               { <img className="h-40" src="/project_img/99.jpg" alt="" />}
 
                   <a target="_blank" href="https://www.linkedin.com/in/abdessamad-el-maaroufi-6b18bb224/">
-                  <img className="w-10" src="../../public/icon/language_progra/linkedin.svg" alt="" />
+                  <img className="w-10" src="/icon/language_progra/linkedin.svg" alt="" />
                   </a>
                   <a  target="_blank" href="https://web.facebook.com/abdessamad.elmaaroufi.31/">
-                  <img className="w-10" src="../../public/icon/language_progra/facebook.svg" alt="" />
+                  <img className="w-10" src="/icon/language_progra/facebook.svg" alt="" />
                   </a>
                   <a target="_blank" href="https://github.com/DESELMAAR">
-                  <img className="w-10" src="../../public/icon/language_progra/github3.svg" alt="" />
+                  <img className="w-10" src="/icon/language_progra/github3.svg" alt="" />
                   </a>
                </div>
-               <p className=" text-xl md:text-xl text-pink-950 font-semibold">Hello! My name is Abdessamad <br /> A FullStack Develloper</p>
+               <p className=" text-xl md:text-xl text-pink-950 font-semibold">Hello! I'm Abdessamad <br /> A FullStack Develloper </p>
                <p className="welcomeToMyPortfolio max-md:text-3xl max-md:font-semibold lg:text-4xl  md:text-6xl text-6xl flex-wrap text-cyan-900 md:font-bold">Welcome to my Portfolio</p>
-               <p className="moreInfo text-md font-semibold sm:text-md text-slate-900  mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, alias. Debitis nobis fugiat cum mollitia, suscipit quisquam omnis, magni aspernatur, aliquam est aliquid eius animi corrupti quam nam sapiente quis.</p>
+               <p className="moreInfo text-md font-semibold sm:text-md text-slate-900  mb-3">Full Stack Developer,developing and designing responsive web applications, using modern frameworks and new technologies for frontend and backend development, enjoying collaborate with teams and learn more skills as a Full Stack Developer.</p>
                {
                token? <div> <div className="flex mb-2">
                   <a onClick={()=>{downloadFileAtURL("http://127.0.0.1:8000/storage/"+file)}} target="_blank"    id="downloadCv" className="flex items-center px-2 rounded-full" >Download Cv</a>
@@ -113,22 +111,15 @@ const ShowModal=()=>{
                   </label>
                   </button>
                   </div>
-                        {/* <AddTechnologyButton/> */}
                         <a onClick={ShowModal} className="text-fuchsia-950 font-semibold hover:border-b-2 border-fuchsia-950 transition-color duration-100  cursor-pointer">Add a new programing language</a>
-
                   </div>
                   :
                   <>
-                  <button onClick={handleShowLogin} className="md:mx-auto rounded-full">Connect Now</button>
-
+                  {localStorage.getItem("email")  ? <p  onClick={handleShowLogin} className="md:mx-auto flex items-center gap-4 text-blue-900 font-semibold text-xl rounded-full" ><img className="w-20" src="https://www.svgrepo.com/show/39989/welcome.svg" alt="welcome" /> Welcome to my portfolio!</p> :<button onClick={handleShowLogin} className="md:mx-auto  bg-teal-800 rounded-full">Login Now</button>}
                   </> 
-                  
                }
-               
             </div>
             <div className="right max-md:w-full max-md:mx-auto max-md:bg-white">
-           
-
             <CSSTransition
                   in={showFormToAddFile}
                   timeout={300}
@@ -137,14 +128,9 @@ const ShowModal=()=>{
                   >
                   <FormToAddFile/>
             </CSSTransition>
-
-            
-
             </div>
-            
-
+            {/* <Login/> */}
       </Element> 
       </>
-      
     )
 }

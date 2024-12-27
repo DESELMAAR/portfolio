@@ -19,23 +19,16 @@ export default function Skills(){
   
 
     return(
-                  <Element name="skills" className="Skills lg:mx-16 md:mx-8 sm:mx-0 rounded-md  lg:p-4 md:p-2 sm:p-1 relative ">
+                  <div className="">
+                     <Element name="skills" className="Skills      sm:mx-0  lg:p-4 md:p-2 sm:p-1 relative ">
                        
-                        <div className="">
-                            <p className="skills_title">Skills</p>
-                            <p className="skill-info text-center flex-wrap text-sm">I have a solid experence as a fullStack Developper,  making differents projects to maintain my skills and developpe for new features.  you find some project that I have made with these technologies</p>
-                            <CSSTransition
-                                in={showModalAddTechnology}
-                                timeout={300}
-                                classNames="fade"
-                                unmountOnExit
-                                >
-                                <Technology/>
-                            </CSSTransition>
-                        
-                            <Cards/>
-                        </div>
-                        
-                   </Element>
+                       <div className="mx-auto">
+                           <p className="skills_title">Skills</p>
+                           <p className="skill-info ml-5  w-4/5 flex-wrap text-md font-semibold">Solid skills as a fullStack Developper,  making differents projects to maintain my skills and develope  new features. Here you find some projects that I have made with these frontend and backend technologies</p>
+                           <Cards/>
+                       </div>
+                  </Element>
+                  </div>
+                 
     )
 }

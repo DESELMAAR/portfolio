@@ -19,9 +19,9 @@ export default function FormAdd({getLanguages}){
             category:categoryValue.current.value
         }
          e.preventDefault();
-         console.log(payload)
+        //  console.log(payload)
         axiosClient.post("/storelanguage",payload).then((data)=>{
-            console.log(data.data)
+            // console.log(data.data)
             if(data.data.status===200){
                 setNotification("Saved successfully!")
                 getLanguages()
@@ -56,6 +56,8 @@ export default function FormAdd({getLanguages}){
                 <option value="github">Github</option>
                 <option value="docker">Docker</option>
                 <option value="azure">Azure</option>
+                <option value="firebase">Firebase</option>
+                <option value="api">Api</option>
 
 
             </select>

@@ -28,6 +28,8 @@ class ProjectRequest extends FormRequest
             "github"=>"required",
             'technologies' => 'array',
             'technologies.*' => 'exists:technologies,id',
+            "app_type_select"=>"required|integer",
+            "describeproject"=>"required"
 
         ];
     }

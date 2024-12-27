@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\FileController;
+use App\Http\Controllers\Api\LikeController;
 use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\TechnologyController;
 use Illuminate\Http\Request;
@@ -56,4 +57,9 @@ Route::get('/technologies',[TechnologyController::class,'index']);
 
 Route::delete('/deletetechnologies/{technologie}',[TechnologyController::class,'destroy']);
 
+// 
+// likes routes
+Route::post("/storelike",[LikeController::class,"store"]);
+
+Route::get("/getlikes",[LikeController::class,"index"]);
 // 

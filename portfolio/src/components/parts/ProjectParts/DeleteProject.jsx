@@ -5,13 +5,13 @@ export default function DeleteProject({id,getProjectList}){
 
 const handleClickToDeleteProject=(e)=>{
     e.preventDefault();
-console.log(id)
+// console.log(id)
 
 axiosClient.delete(`/deleteproject/${id}`).then(({data})=>{
-    console.log(data)
+    // console.log(data)
     getProjectList()
 }).catch((err)=>{
-    console.log(err)
+    // console.log(err)
 })
 }
     return(
@@ -20,7 +20,7 @@ axiosClient.delete(`/deleteproject/${id}`).then(({data})=>{
                         {localStorage.getItem("user") ? <a onClick={handleClickToDeleteProject} className="float-right absolute bottom-2 right-2  " href="#">
                         
                         
-                        <img className="w-8 " src="../../../public/icon/language_progra/delete.svg" alt="" />
+                        <img className="w-8 " src="/icon/language_progra/delete.svg" alt="" />
                         </a> :""}
         </>
      

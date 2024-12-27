@@ -3,7 +3,7 @@ import { Link,Element } from "react-scroll";
 
 export default function Contacts(){
     return(
-       <Element name="contact" className="Contacts p-10 lg:mx-16 md:mx-8 sm:mx-0 rounded-md bg-gradient-to-r from-black  via-black via-black to-pink-950  opacity-85">
+       <Element name="contact" className="Contacts mt-20  p-10   sm:mx-0  bg-gradient-to-r from-black  via-black via-black to-pink-950  opacity-85">
         <p className="text-center text-5xl font-semibold">Mail us</p>
         <p className="text-xl text-center ">You can use your google account to login and send us an email <button className="ConnectNow">Connect Now</button> </p>
         <div className="grid lg:grid-cols-2 mt-6 gap-6">

@@ -31,6 +31,8 @@ class ProjectController extends Controller
                 'url' => $project->url,
                 'github' => $project->github,
                 'technologies' => $project->technologies,
+                "app_type_select"=>$project->app_type_select,
+                "describeproject"=>$project->describeproject
             ];
         }));
     }
@@ -49,6 +51,8 @@ class ProjectController extends Controller
                 'image' => $imageName,
                 'url' => $request->url,
                 'github' => $request->github,
+                "app_type_select"=>$request->app_type_select,
+                "describeproject"=>$request->describeproject
             ]);
     
             // Attach technologies

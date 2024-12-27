@@ -3,7 +3,7 @@ import { Link,Element } from "react-scroll";
 
 export default function Comments(){
     return(
-       <Element name="comment"  className="Comments bg-slate-50 md:m-16  p-14 rounded-md lg:mx-16 md:mx-8 sm:mx-0 opacity-80">
+       <Element name="comment"  className="Comments bg-slate-50   p-14  sm:mx-0 ">
         <p className="text-xl text-slate-950 font-semibold">Comments</p>
         <p className="text-md text-slate-700">Leave comment here </p>
         <form action="">

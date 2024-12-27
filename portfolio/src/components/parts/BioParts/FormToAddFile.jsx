@@ -22,12 +22,12 @@ export default function FormToAddFile({ShowHideFormAddFile,isVisible}){
         // console.log("tosave",formData)
         setLoading(true)
         axiosClient.post("/storefile",formData,{headers:{'Content-Type':"multipart/form-data"},}).then(({data})=>{
-            console.log(data)
+            // console.log(data)
             setLoading(false)
             setNotification("File uploaded successfully")
             ShowHideFormAddFile(false)
         }).catch((err)=>{
-            console.log(err)
+            // console.log(err)
             setLoading(false)
         })
     }

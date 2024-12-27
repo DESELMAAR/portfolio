@@ -30,15 +30,24 @@ function App() {
   }
   return (
     <ContextProvider>
-      <div className='max-sm:px-2 '>
-            <NavBar reload={reload}/>
+      <div className='w-full sticky top-0 divnav '>
+        <div className='max-xl:px-2  mx-auto sticky xl:w-3/4 2xl:w-4/5  bg-opacity-50 shadow-2xl bg-opacity-45 '>
+           <NavBar reload={reload}/>
+           <AlertNotification />
+
+        </div>
+      </div>
+      <div className='max-xl:px-2 relative  xl:w-3/4 2xl:w-4/5 grid justify-center'>
+
+          
+            
             <Bio/>
             <Skills/>
             <Projects/>
             <Contacts/>
             <Comments/>
             <Footer/>
-          </div>
+      </div>
     </ContextProvider>
    
    

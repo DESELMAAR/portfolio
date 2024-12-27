@@ -12,13 +12,13 @@ export default function Footer(){
                 </div>
                 <div className="socialmedia flex gap-2">
                   <a target="_blank" href="https://www.linkedin.com/in/abdessamad-el-maaroufi-6b18bb224/">
-                  <img className="w-10" src="../../public/icon/language_progra/linkedin.svg" alt="" />
+                  <img className="w-10" src="/icon/language_progra/linkedin.svg" alt="" />
                   </a>
                   <a target="_blank" href="https://web.facebook.com/abdessamad.elmaaroufi.31/">
-                  <img className="w-10" src="../../public/icon/language_progra/facebook.svg" alt="" />
+                  <img className="w-10" src="/icon/language_progra/facebook.svg" alt="" />
                   </a>
                   <a target="_blank" href="https://github.com/DESELMAAR">
-                  <img className="w-10" src="../../public/icon/language_progra/github3.svg" alt="" />
+                  <img className="w-10" src="/icon/language_progra/github3.svg" alt="" />
                   </a>
                </div>
                    

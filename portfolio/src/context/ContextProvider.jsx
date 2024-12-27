@@ -12,6 +12,8 @@ const StateContext = createContext({
     colorNotification:null,
     showModalAddTechnology:null,
     setColorNotification:()=>{},
+    showHolLoginDiv:null,
+    setShowHolLoginDiv:()=>{},
     setShowModalAddTechnology:()=>{},
     setNotificatio:()=>{},
     setShowAddForm:()=>{},
@@ -35,7 +37,7 @@ export const ContextProvider = ({children}) => {
     const [showLogin,setShowLogin]=useState(false)
     const [showModalAddTechnology,setShowModalAddTechnology]=useState(false);
     const [colorNotification,setColorNotification]=useState(false);
-
+const [showHolLoginDiv,setShowHolLoginDiv]=useState(true)
 
     const setToken = (token) => {
         _setToken(token)
@@ -62,6 +64,8 @@ export const ContextProvider = ({children}) => {
             notification,
             showModalAddTechnology,
             colorNotification,
+            showHolLoginDiv,
+            setShowHolLoginDiv,
             setColorNotification,
             setShowModalAddTechnology,
             setNotification,

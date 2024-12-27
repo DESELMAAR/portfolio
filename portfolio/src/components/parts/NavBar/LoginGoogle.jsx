@@ -3,7 +3,7 @@ import { auth, provider, signInWithPopup, signOut } from "../../../firebase";
 import { UseStateContext } from "../../../context/ContextProvider";
 import AddTechnologyButton from "../AddTechnologyButton";
 export default function LoginGoogle({toggleComponent1}){
-    const {user,token,showLogin ,setUser}=UseStateContext();
+    const {user,token,showLogin ,setUser,setShowLogin}=UseStateContext();
     const [mount,setMount]=useState(true);
     const handleLogin = async () => {
         try {
@@ -37,18 +37,28 @@ export default function LoginGoogle({toggleComponent1}){
           console.error("Erreur lors de la déconnexion :", error);
         }
       };
+      const handleHideFormUser=(e)=>{
+       e.preventDefault()
+      //  console.log(showLogin)
+       setShowLogin(false)
+      }
     return (
-             <div className="authgoogle">
+             <div className="authgoogle ">
                                 <div>
                                     {localStorage.getItem("displayName") ? (
-                                        <div className="flex items-center">
+                                      <div className="grid gap-2 grid-cols-1">
+                                        <div className="flex items-center justify-between">
                                         <h1 className="text-sm">Bienvenue, {localStorage.getItem("displayName")}</h1>
                                         <img className="rounded-full w-8 mx-2" src={localStorage.getItem("photoURL")} alt="Avatar" />
+                                        </div>
+                                        <div className="flex justify-between">
                                         <button className="text-sm font-semibold hover:border-b-2" onClick={handleLogout}>Logout</button>
+                                        <button className="text-sm font-semibold hover:border-b-2" onClick={handleHideFormUser}>Hide</button>
+                                        </div>
                                         </div>
                                     ) : (
                                       <div className="flex">
-                                          <button className="text-sm flex  items-center" onClick={handleLogin}>Connect with <img className="w-8 ml-2 rounded-full img_login_google  " src="../../../../public/icon/language_progra/gmail.svg" alt="" /></button>
+                                          <button className="text-sm flex  items-center" onClick={handleLogin}>Connect with <img className="w-10 ml-2 rounded-full img_login_google  " src="/icon/language_progra/gmail.svg" alt="" /></button>
                                           {/* <AddTechnologyButton/> */}
                                       </div>
                                     )}

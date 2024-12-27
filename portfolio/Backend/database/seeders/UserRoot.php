@@ -15,8 +15,8 @@ class UserRoot extends Seeder
     public function run(): void
     {
        \App\Models\UserRoot::create([
-            'user' => 'root',
-            'password' => Hash::make("0000"),
+            'user' => 'admin',
+            'password' => Hash::make("Mypassword0000"),
         ]);
     }
 }

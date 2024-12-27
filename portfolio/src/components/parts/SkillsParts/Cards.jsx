@@ -26,7 +26,6 @@ export default function Cards(){
     const getLanguages=()=>{
         setLoading(true)
         axiosClient.get("/getlanguage").then(({data})=>{
-            console.log(data.language)
             setLoading(false)
             if(data.language){
                 setLanguages(data.language)
@@ -118,8 +117,8 @@ export default function Cards(){
                 {!loading ? <div className="">
                                {
                                 token && 
-                                <button onClick={handleAdd} className="ml-2 imgIconEdit">
-                                     <img className="" src="/icon/crayon.png" alt="" />
+                                <button onClick={handleAdd} className="ml-2 absolute right-2 top-2  imgIconEdit">
+                                     <img className="" src="/icon/crayon.svg" alt="" />
                                 </button>
                                 }
 
@@ -144,7 +143,7 @@ export default function Cards(){
                                                                     
                                                                     {showClose1 && token ? <button className="float-right absolute text-red-600 -top-2 -right-2 font-semibold" onClick={()=>{handleDelete(item.id)}}>X</button>:""}
 
-                                                                    <img className="iconprogra" src={`../../../../public/icon/language_progra/`+item.language_name+`.svg`} alt="" />
+                                                                    <img className="iconprogra" src={`/icon/language_progra/`+item.language_name+`.svg`} alt="" />
                                                                     
                                                                     <p className="">{item.language_name}</p>
                                                                 </span>
@@ -164,7 +163,7 @@ export default function Cards(){
                                                                     
                                                         {showClose2 && token ? <button className="float-right absolute text-red-600 -top-2 -right-2 font-semibold" onClick={()=>{handleDelete(item.id)}}>X</button>:""}
 
-                                                        <img className="iconprogra" src={`../../../../public/icon/language_progra/`+item.language_name+`.svg`} alt="" />
+                                                        <img className="iconprogra" src={`/icon/language_progra/`+item.language_name+`.svg`} alt="" />
                                                         
                                                         <p className="">{item.language_name}</p>
                                                     </span>)
@@ -183,7 +182,7 @@ export default function Cards(){
                                                                     
                                                     {showClose3 && token ? <button className="float-right absolute text-red-600 -top-2 -right-2 font-semibold" onClick={()=>{handleDelete(item.id)}}>X</button>:""}
 
-                                                    <img className="iconprogra" src={`../../../../public/icon/language_progra/`+item.language_name+`.svg`} alt="" />
+                                                    <img className="iconprogra" src={`/icon/language_progra/`+item.language_name+`.svg`} alt="" />
                                                     
                                                     <p className="">{item.language_name}</p>
                                                 </span>
@@ -201,7 +200,7 @@ export default function Cards(){
                                                                     
                                                                 {showClose4 && token ? <button className="float-right absolute text-red-600 -top-4 -right-4 font-semibold" onClick={()=>{handleDelete(item.id)}}>X</button>:""}
 
-                                                                <img className="iconprogra" src={`../../../../public/icon/language_progra/`+item.language_name+`.svg`} alt="" />
+                                                                <img className="iconprogra" src={`/icon/language_progra/`+item.language_name+`.svg`} alt="" />
                                                                 
                                                                 <p className="">{item.language_name}</p>
                                                             </span>
