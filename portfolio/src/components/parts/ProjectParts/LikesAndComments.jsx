@@ -26,7 +26,7 @@ export default function LikesAndComments({projectid,getProjectList,myRerender}){
             }).catch((err)=>{
                 console.log(err)
             })
-             console.log("google auth fait ")
+            //  console.log("google auth fait ")
         }else{
              setNotification("Please log in to like this project")
 

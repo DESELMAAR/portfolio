@@ -11,7 +11,11 @@ const StateContext = createContext({
     notification:null,
     colorNotification:null,
     showModalAddTechnology:null,
+    refreshComment:null,
+    setRefreshComment:()=>{},
     setColorNotification:()=>{},
+    responseId:null,
+    setResponseId:()=>{},
     showHolLoginDiv:null,
     setShowHolLoginDiv:()=>{},
     setShowModalAddTechnology:()=>{},
@@ -37,7 +41,9 @@ export const ContextProvider = ({children}) => {
     const [showLogin,setShowLogin]=useState(false)
     const [showModalAddTechnology,setShowModalAddTechnology]=useState(false);
     const [colorNotification,setColorNotification]=useState(false);
-const [showHolLoginDiv,setShowHolLoginDiv]=useState(true)
+const [showHolLoginDiv,setShowHolLoginDiv]=useState(true);
+const [responseId,setResponseId]=useState("");
+const [ refreshComment,setRefreshComment]=useState(false);
 
     const setToken = (token) => {
         _setToken(token)
@@ -54,6 +60,13 @@ const [showHolLoginDiv,setShowHolLoginDiv]=useState(true)
 
         }
     },5000)
+
+    setTimeout(()=>{
+        if(refreshComment){
+            setRefreshComment(false)
+
+        }
+    },300)
     return (
         <StateContext.Provider value={{
             // pass data that we need for children pages user info and token ...
@@ -65,6 +78,10 @@ const [showHolLoginDiv,setShowHolLoginDiv]=useState(true)
             showModalAddTechnology,
             colorNotification,
             showHolLoginDiv,
+            responseId,
+            refreshComment,
+            setRefreshComment,
+            setResponseId,
             setShowHolLoginDiv,
             setColorNotification,
             setShowModalAddTechnology,

@@ -48,7 +48,7 @@ const handleDownloadCv=()=>{
    
   
    axiosClient.get(`/getfiles/${1}`).then(({data})=>{
-      console.log(data.file.image)
+      // console.log(data.file.image)
       if(data.file.image){
          setFile(data.file.image)
 
@@ -129,7 +129,6 @@ const ShowModal=()=>{
                   <FormToAddFile/>
             </CSSTransition>
             </div>
-            {/* <Login/> */}
       </Element> 
       </>
     )

@@ -32,9 +32,11 @@ html {
 }
 
 body {
-
+  /* background-color: #10e09033; */
   background-color: #b47722;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23cc0000' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23aa0000' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23c51502' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23a30c03' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23be2004' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%239c1406' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23b72807' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23951a09' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23b12d0a' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%238f1e0c' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23aa320e' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%2388210f' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+
+  /* background-image: url('/project_img/bg2.jpg'); */
   background-attachment: fixed;
   
 background-size: cover; 
@@ -49,7 +51,7 @@ background-position: top ;
 
 /* Navbar */
 .divnav{
-  background-color: #b47722;
+  /* background-color: #b47722; */
   z-index: 601;
   border-bottom: 1px solid rgba(255, 253, 251,0.2);
 }
@@ -92,7 +94,7 @@ nav{
 margin-top: 0.5em;
 /* font-size: 1.4em; */
 }
-.Bio .left button,.mailright form button, .Comments form button{
+.Bio .left button,.mailright form button{
   /* padding: 1em 0; */
   /* margin-top: 1em; */
   font-size: 1.3em;
@@ -119,7 +121,7 @@ margin-top: 0.5em;
   background-color: rgb(10, 126, 126);
 }
  .right{
-  background-image: url("/public/icon/c.jpg");
+  background-image: url("/project_img/about.png");
   background-position: center;
   background-size: cover;
 background-position: center;
@@ -370,24 +372,24 @@ border: 2px solid tomato;
 /* Comments */
 
 .img-Comment{
-width: 50px;
-height: 50px;
+width: 40px;
+height: 40px;
 border-radius: 50%;
 }
 .Comments_img_textarea textarea{
   resize: none;
   outline: none;
   padding: 0 1em;
-  color: #121212;
-  font-size: 20px;
-border: 3px solid tomato;
-border-radius: 20px;
-  height: 6em;
+  /* color: #121212; */
+  font-size: 14px;
+border: 1px solid rgb(142, 211, 184);
+border-radius: 30px;
+  height: fit-content;
 }
-.Comments_img_textarea textarea:focus{
+/* .Comments_img_textarea textarea:focus{
   border: 3px solid #1babcf;
 transition: all ease-in-out 0.2s;
-}
+} */
 
 /* end comments */
 

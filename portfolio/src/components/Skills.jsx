@@ -20,7 +20,7 @@ export default function Skills(){
 
     return(
                   <div className="">
-                     <Element name="skills" className="Skills      sm:mx-0  lg:p-4 md:p-2 sm:p-1 relative ">
+                     <Element name="skills" className="Skills    sm:mx-0  lg:p-4 md:p-2 sm:p-1 relative ">
                        
                        <div className="mx-auto">
                            <p className="skills_title">Skills</p>

@@ -11,7 +11,7 @@ export default function Projects(){
     const {showModalAddTechnology}=UseStateContext();
     
     return(
-       <Element name="project" className=" Projects    sm:mx-0    relative  ">
+       <Element name="project" className=" Projects      sm:mx-0    relative  ">
         <ProjectWord/>
         <ProjectsList/>
 

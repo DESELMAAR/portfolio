@@ -44,7 +44,7 @@ function App() {
             <Bio/>
             <Skills/>
             <Projects/>
-            <Contacts/>
+            {/* <Contacts/> */}
             <Comments/>
             <Footer/>
       </div>

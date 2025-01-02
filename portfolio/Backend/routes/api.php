@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\AnswerController;
+use App\Http\Controllers\Api\CommentController;
 use App\Http\Controllers\Api\FileController;
 use App\Http\Controllers\Api\LikeController;
 use App\Http\Controllers\Api\ProjectController;
@@ -62,4 +64,17 @@ Route::delete('/deletetechnologies/{technologie}',[TechnologyController::class,'
 Route::post("/storelike",[LikeController::class,"store"]);
 
 Route::get("/getlikes",[LikeController::class,"index"]);
+// 
+
+// comment
+Route::post("/storecomment",[CommentController::class,"store"]);
+
+Route::get("/getcomment",[CommentController::class,"index"]);
+Route::delete("/deletecomment/{comment}",[CommentController::class,"destroy"]);
+
+
+Route::post("/storeanswer",action: [AnswerController::class,"store"]);
+
+Route::delete("/deleteanswer/{answer}",action: [AnswerController::class,"destroy"]);
+
 // 
